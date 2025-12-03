@@ -1,12 +1,12 @@
 package com.example.javamavenjunithelloworld;
 
+import java.io.PrintStream;
+
 /**
  * A very basic program that demonstrates the use of JUnit tests. The tests include a sample unit test and an
  * integration test.
  */
 public class HelloApp {
-
-    static int DEFAULT_TIMES = 3;
 
     static int EXIT_STATUS_PARAMETER_NOT_UNDERSTOOD = 2;
     static int EXIT_STATUS_HELLO_FAILED = 4;
@@ -17,8 +17,9 @@ public class HelloApp {
      * @param args Arguments passed to this program.
      */
     public static void main(String[] args) {
+        HelloService service = new HelloService();
 
-        int times = DEFAULT_TIMES;
+        int times = Hello.DEFAULT_TIMES;
         if (args.length >= 1) {
             try {
                 times = Integer.valueOf(args[0]);
@@ -29,14 +30,12 @@ public class HelloApp {
             }
         }
 
-        Hello hi = new Hello();
         try {
-            hi.setTimes(times);
+            service.sayHello(times, System.out);
         } catch (IllegalArgumentException e) {
             System.err.println("Something went wrong: " + e.getMessage());
             System.exit(EXIT_STATUS_HELLO_FAILED);
         }
-        hi.sayHello(System.out);
     }
 
 }

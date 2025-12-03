@@ -10,8 +10,10 @@ public class Hello {
     static final String HELLO = "Hello!";
 
     public static final int MAXIMUM_AMOUNT_OF_TIMES = 20;
+    // failed initally because it was defined as 3. Changed to 1.
+    public static final int DEFAULT_TIMES = 1;
 
-    private int times = 1;
+    private int times = DEFAULT_TIMES;
 
     /**
      * Set how many times "Hello!" should be said.
