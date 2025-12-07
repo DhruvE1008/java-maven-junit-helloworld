@@ -3,14 +3,11 @@ package com.example.javamavenjunithelloworld;
 import java.io.PrintStream;
 
 /**
- * Simple class that says "Hello!".
- *
- * This class implements the HelloService interface for improved modularity and testability.
+ * Implementation of the HelloService interface.
  */
-public class Hello implements HelloService {
-
+public class HelloServiceImpl implements HelloService {
+    
     static final String HELLO = "Hello!";
-
     public static final int MAXIMUM_AMOUNT_OF_TIMES = 20;
     private int times = 1;
 
@@ -42,5 +39,4 @@ public class Hello implements HelloService {
             printer.println(HELLO);
         }
     }
-
 }

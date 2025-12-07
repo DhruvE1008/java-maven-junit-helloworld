@@ -9,6 +9,7 @@ This example demonstrates:
 * Integration tests written with [JUnit 5](https://junit.org/junit5/)
 * Code coverage reports via [JaCoCo](https://www.jacoco.org/jacoco/)
 * A Maven build that puts it all together
+* Modular architecture with separation of concerns
 
 ## Running the tests
 
@@ -16,6 +17,14 @@ This example demonstrates:
 * To run the integration tests as well, call `mvn verify`
 * Code coverage reports are generated when `mvn verify` (or a full `mvn clean install`) is called.
   Point a browser at the output in `target/site/jacoco-both/index.html` to see the report.
+
+## Architecture
+
+The application now follows a layered architecture with the following components:
+
+1. **Application Layer**: `Application` class handles argument parsing and orchestration
+2. **Business Logic Layer**: `HelloServiceImpl` implements `HelloService` interface
+3. **Output Layer**: `ConsoleOutputHandler` implements `OutputHandler` interface
 
 ## Conventions
 

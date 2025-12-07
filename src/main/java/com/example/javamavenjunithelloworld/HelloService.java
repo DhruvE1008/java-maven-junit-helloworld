@@ -1,36 +1,21 @@
 package com.example.javamavenjunithelloworld;
 
-import java.io.PrintStream;
-
 /**
- * Service class that encapsulates the business logic for saying hello.
+ * Interface defining the contract for Hello functionality.
  */
-public class HelloService {
-
-    private final Hello hello;
-
-    public HelloService() {
-        this.hello = new Hello();
-    }
-
+public interface HelloService {
     /**
-     * Say "Hello!" a specified number of times.
+     * Set how many times "Hello!" should be said.
      *
-     * @param times How many times should "Hello!" be said?
-     * @param printer PrintStream to write output to.
+     * @param times How many times should this class say "Hello!"? The value should be no larger than 20.
      * @throws IllegalArgumentException Thrown when times is larger than 20 or a negative number.
      */
-    public void sayHello(int times, PrintStream printer) {
-        hello.setTimes(times);
-        hello.sayHello(printer);
-    }
+    void setTimes(int times);
 
     /**
-     * Say "Hello!" with the default number of times.
+     * Say "Hello!".
      *
      * @param printer PrintStream to write output to.
      */
-    public void sayHello(PrintStream printer) {
-        sayHello(Hello.DEFAULT_TIMES, printer);
-    }
+    void sayHello(java.io.PrintStream printer);
 }
